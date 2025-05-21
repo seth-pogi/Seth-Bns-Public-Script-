@@ -656,7 +656,7 @@ local teleportSwitch = rebirthsFolder:AddSwitch("Auto Teleport to Muscle King", 
 end, "Continuous teleportation to Muscle King")
 
 local LockPositionSwitch = rebirthsFolder:AddSwitch("Lock Position ", function(bool)
-    _G.LG.LockPositonAct = bool
+    _G.LockPositonActive = bool
 	
 		if bool then
 			local currentPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
