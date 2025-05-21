@@ -655,24 +655,6 @@ local teleportSwitch = rebirthsFolder:AddSwitch("Auto Teleport to Muscle King", 
     end
 end, "Continuous teleportation to Muscle King")
 
-local LockPositionSwitch = rebirthsFolder:AddSwitch("Lock Position ", function(bool)
-    _G.LockPositonActive = bool
-	
-		if bool then
-			local currentPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-			getgenv().posLock = game:GetService("RunService").Heartbeat:Connect(function()
-				if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = currentPos
-				end
-			end)
-		else
-			if getgenv().posLock then
-				getgenv().posLock:Disconnect()
-			end
-		end) 
-	end
-end, "Lock Position"
-
 local autoEquipToolsFolder = farmPlusTab:AddFolder("Auto Equip Tools")
 
 -- Auto Weight Toggle
